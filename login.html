@@ -34,59 +34,5 @@ firebase.auth().signInWithEmailAndPassword(email.value,password.value)
 </html>
 
 
-<!-- ================= DASHBOARD.HTML ================= -->
-<!DOCTYPE html>
-<html>
-<head>
-<title>Dashboard</title>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-</head>
-<body>
-<h2>User Dashboard</h2>
-<button onclick="logout()">Logout</button>
-<p>Welcome user</p>
-
-<script>
-const firebaseConfig = {
- apiKey:"YOUR_KEY",
- authDomain:"YOUR_PROJECT.firebaseapp.com"
-};
-firebase.initializeApp(firebaseConfig);
-
-firebase.auth().onAuthStateChanged(user=>{
-if(!user){window.location.href="login.html"}
-});
-
-function logout(){firebase.auth().signOut()}
-</script>
-</body>
-</html>
-<!-- ================= TEMPLATES.HTML ================= -->
-<!DOCTYPE html>
-<html>
-<head>
-<title>Templates</title>
-</head>
-<body>
-<h2>Download Templates</h2>
-
-<div>
-<h3>Startup Planner</h3>
-<a href="files/startup-planner.pdf" download>Download</a>
-</div>
-
-<div>
-<h3>Budget Tracker</h3>
-<a href="files/budget.xlsx" download>Download</a>
-</div>
-
-<div>
-<h3>Roadmap</h3>
-<a href="files/roadmap.docx" download>Download</a>
-</div>
-
-</body>
-</html>
 
 
